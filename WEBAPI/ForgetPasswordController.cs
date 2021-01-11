@@ -25,7 +25,7 @@ namespace ForgetPassword.Controllers
                 {
                     var token = Guid.NewGuid().ToString();
                     MailAddress to = new MailAddress(student.EMAIL);
-                    MailAddress from = new MailAddress("keerthivasan7200@gmail.com");
+                    MailAddress from = new MailAddress(<your smtpmail>);
 
                     MailMessage message = new MailMessage(from, to);
                     message.Subject = "Testing Mail";
@@ -35,7 +35,7 @@ namespace ForgetPassword.Controllers
 
                     SmtpClient client = new SmtpClient("smtp.elasticemail.com", 2525)
                     {
-                        Credentials = new NetworkCredential("keerthivasan0044@gmail.com", "B73FB2954586AA60B9D3582D18E4829F39D5"),
+                        Credentials = new NetworkCredential(<your smtpmail>, <your smtp password>),
                         EnableSsl = true
                     };
 
